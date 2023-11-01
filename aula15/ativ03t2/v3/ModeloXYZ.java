@@ -1,25 +1,31 @@
 package aula15.ativ03t2.v3;
 
 public class ModeloXYZ extends Modem {
-	private float velocidadePortaFibra;
+	public enum PerfilPortaFibra {
+		FASTETHERNET,
+		GIGABIT
+	}
+	private PerfilPortaFibra velocidadePortaFibra;
 
-	public ModeloXYZ(String nome, float velocidade, float velocidadePortaFibra) {
+	public ModeloXYZ(String nome, float velocidade, PerfilPortaFibra velocidadePortaFibra) {
 		super(nome, "XYZ", velocidade, 4);
 		this.velocidadePortaFibra = velocidadePortaFibra;
 	}
 	
 	public String perfilDeVelocidade() {
-		if (velocidadePortaFibra > 1000f) {
+		if (velocidadePortaFibra.equals(PerfilPortaFibra.FASTETHERNET)) {
+			return "Baixa velocidade";
+		} else if (velocidadePortaFibra.equals(PerfilPortaFibra.GIGABIT)) {
 			return "Alta velocidade";
 		}
-		return "Baixa velocidade";
+		return "Velocidade desconhecida";
 	}
 
-	public float getVelocidadePortaFibra() {
+	public PerfilPortaFibra getVelocidadePortaFibra() {
 		return velocidadePortaFibra;
 	}
 
-	public void setVelocidadePortaFibra(float velocidadePortaFibra) {
+	public void setVelocidadePortaFibra(PerfilPortaFibra velocidadePortaFibra) {
 		this.velocidadePortaFibra = velocidadePortaFibra;
 	}
 
