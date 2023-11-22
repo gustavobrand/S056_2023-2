@@ -5,16 +5,24 @@ public class ItenNoCarrinho {
 	private Produto item;
 	private float subtotal;
 	 
-	public ItenNoCarrinho(int quantidade, Produto item, float subtotal) {
+	public ItenNoCarrinho(int quantidade, Produto item) {
 		this.quantidade = quantidade;
 		this.item = item;
-		this.subtotal = subtotal;
+		this.subtotal = quantidade*item.getPrecoUnidade();
 	}
 
 	public float getSubtotal() {
 		return subtotal;
 	}
-	 
+
+	@Override
+	public String toString() {
+		return "Qtde: " + quantidade + ", item:" + item + 
+				", preço unit: R$" + item.getPrecoUnidade() + 
+				", subtotal:" + subtotal;
+	}
+	
+	
 	
 	// TODO: gets/sets/toString... etc 
 }

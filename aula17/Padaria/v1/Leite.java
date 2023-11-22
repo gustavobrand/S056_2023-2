@@ -20,7 +20,13 @@ public class Leite extends Produto {
 		System.out.println(" Nome: " + nome + ", marca: " + marca + 
 							", preço unit: R$" + precoUnidade);
 	}
+
+	@Override
+	public String toString() {
+		return "Leite [tipo=" + tipo + ", classificacao=" + classificacao + ", nome=" + nome + ", precoUnidade="
+				+ precoUnidade + ", marca=" + marca + "]";
+	}
 	
 	// TODO: gets/sets/toString
-
+	
 }

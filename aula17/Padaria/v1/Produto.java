@@ -11,8 +11,13 @@ public abstract class Produto {
 		this.marca = marca;
 	}
 	
-	public abstract void descricao(); 
+	public abstract void descricao();
 
+	public float getPrecoUnidade() {
+		return precoUnidade;
+	} 
+
+	
 	//TODO: implementar gets/sets/toString
 	
 }

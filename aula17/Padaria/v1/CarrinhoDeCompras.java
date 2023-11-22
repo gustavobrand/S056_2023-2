@@ -11,11 +11,11 @@ public class CarrinhoDeCompras {
 	
 	public void AdicionarItem(ItenNoCarrinho i) {
 		items.add(i);
-		
-		// Exemplo de foreach a ser usado no totaldacompra e listarprodutos
-//		for (ItenNoCarrinho item : items) {
-//			//item.getSubtotal() da acesso ao subtotal
-//		}
+	}
+	public void ListarProdutos() {
+		for (ItenNoCarrinho item : items) {
+			System.out.println(item);
+		}
 	}
 	
 	// TODO: totaldacompra, listarprodutos, etc...
